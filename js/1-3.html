@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/1-3.css" rel="stylesheet">
+  <title>1-3</title>
+</head>
+<body>
+  
+  <div class="id-box" id="idbox">
+    <p id="idbox-text">입력</p>
+    <button onclick="아디창('none','')">닫기</button>
+  </div>
+
+  <button onclick="아디창('block','아이디입력')">버튼1</button>
+  <button onclick="아디창('block','비번입력')">버튼2</button>
+<!-- 오타주의;;onclick 오타때문에 계속 헤맴 -->
+<br>
+<br>
+<br>
+  <button id="btnn")>버튼3</button>
+
+
+
+  <script> 
+    function 아디창(뿅1,뿅2){
+      document.getElementById('idbox').style.display = 뿅1;
+      document.getElementById('idbox-text').innerHTML= 뿅2;
+    }
+
+
+    document.getElementById('btnn').addEventListener('click',function(){
+      document.getElementById('idbox').style.display = 'block';
+      // document.getElementById('idbox').style.background= 'pink';
+      document.getElementById('idbox-text').innerHTML= '버튼333';
+    });
+
+  </script>
+
+
+
+</body>
+</html>

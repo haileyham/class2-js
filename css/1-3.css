@@ -1,0 +1,8 @@
+.id-box{
+  width:300px;
+  padding:20px;
+  background: plum;
+  border-radius: 5px;
+  color: white;
+  display:none;
+}
