@@ -1,0 +1,26 @@
+.game369{
+  background: pink;
+  color:white;
+  padding:5px;
+  border-radius: 5px;
+  border: none;
+  margin:10px;
+  cursor: pointer;
+}
+
+.game369show1{
+  width:100px;
+  height:50px;
+  background: palevioletred;
+  color: white;
+  font-size: 10px;
+  padding-top:30px;
+  text-align: center;
+  border-radius: 5px;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.game369show2{
+  visibility: visible;
+}

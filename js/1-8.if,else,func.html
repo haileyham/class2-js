@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/1-8.css" rel="stylesheet">
+  <title>1-8 js</title>
+</head>
+<body>
+  <button class="game369" id="game369">
+    369게임
+  </button>
+  
+  <div class="game369show1" id="game369show1">
+    wow! good!
+  </div>
+
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+
+    function 삼육구게임(num){
+      if(num % 3 == 0){
+        console.log("박수");
+      } else{
+        console.log("통과");
+      }
+    }
+    삼육구게임(15);
+
+    // function 삼육구업글(num){
+    //   if(num % 3 == 0){
+    //     console.log("박수");
+    //   } if(num % 9 == 0){
+    //     console.log("박수박수");
+    //   } else{
+    //     console.log("통과");
+    //   }
+    // }
+    function 삼육구업글(num){
+      if(num % 9 == 0){
+        console.log("박수박수");
+      } else if(num % 3 == 0){
+        console.log("박수");
+      } else{
+        console.log("통과");
+      }
+    }
+    삼육구업글(11);
+    삼육구업글(18);
+    삼육구업글(6);
+
+    // https://codingapple.com/forums/topic/369%EA%B2%8C%EC%9E%84-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%A0%95%EB%8B%B5%EC%A2%80-%EB%B6%80%ED%83%81%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4/
+    // 마지막자리 파악으로 369
+
+
+    function 시험(score1,score2){
+      if(score1 < 40 || score2 < 40){
+        console.log("불합격");
+        } 
+        // if(isNaN(score1,score2)){
+        //   alert('숫자 입력하세요!');
+        // } 입력한것이 숫자 아닐때 , 
+        else if(score1 + score2 >= 120){
+        console.log("합격");
+      }else{
+        console.log("불합격");
+      }
+    }
+    시험(40,43);
+    시험(50,60);
+    시험(40,90);
+    시험(40,80);
+    시험('ㅁ',3);
+
+
+  </script>
+
+</body>
+</html>
