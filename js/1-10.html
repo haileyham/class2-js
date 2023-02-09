@@ -8,5 +8,53 @@
 </head>
 <body>
   
+  <p>태조 이성계 태어난 년도?</p>
+  <input type="text" id="answer">
+  <button id="send-answer">제출</button>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+
+  <script>
+    // let age = 30;
+    // const location = 'Seoul';
+
+
+    // var 예금액 = 60000;
+    // var 미래예금액 = 0;
+    // 미래예금액 = 예금액 * 1.2 * 1.2;
+    // console.log(미래예금액);
+
+    // if(예금액 >= 50000){
+    //   미래예금액 = 예금액 *1.2 *1.2;
+    // } else{
+    //   미래예금액 = 예금액 * 1.15 * 1.15;
+    // }
+    // console.log(미래예금액);
+
+
+
+    // var first = 360;
+    // var total = 0;
+
+    // total = first + first * 2/3 + first * 2/3 * 2/3
+    // console.log(total);
+
+
+    var count=0;
+
+    document.getElementById('send-answer').addEventListener('click',function(){
+      count += 1;
+    var 답안 = document.querySelector('#answer').value;
+      if(답안 == '1335'){
+        alert('성공')
+      } else if(count >= 3 && 답안 != '1335'){
+        alert('멍충이')
+      }
+    });
+
+  </script>
 </body>
 </html>
