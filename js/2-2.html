@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2-2</title>
+</head>
+<body>
+  <div class="alert" id="alert1">
+    hello 1초뒤ㅣ빠이
+  </div>
+
+  <div class="alert" id="alert5">
+    hello <span id="num">5</span>초 남았다
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+  integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // setTimeout(function(){
+  //   console.log('hello')
+  // },1000;)
+
+  setTimeout(function(){
+    $('#alert1').hide();
+  },1000);
+
+  setInterval(function(){
+    console.log('hello')
+  }, 1000);
+
+
+
+
+  setTimeout(함수,1000);
+  function 함수(){
+    console.log('hi')
+  }
+  // 위와같이 function 콜백함수 만들어놓고 집어넣어도됨
+
+
+
+  var count = 5;
+  setInterval(function(){
+    count -= 1;
+    if(count >= 0){
+      document.getElementById('num').innerHTML = count;
+    } else{
+      document.getElementById('alert5').style.display='none';
+      clearTimeout(count);
+    }
+  },1000);
+
+
+
+</script>
+</body>
+</html>
