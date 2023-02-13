@@ -227,7 +227,44 @@ $('.tab-button').eq(i).on('click', function(){
   // a.innerHTML = 'hello';
   // document.querySelector('#test').appendChild(a);
 
+  var 어레이 = [7,3,5,2,40];
+어레이.sort(function(a, b){
+  return a - b
+});
 
+console.log(어레이);
+
+어레이.sort(function(a, b){
+  return a - b
+}); 
+
+var 어레이 = [7,3,5,2,40];
+
+어레이.sort(function(a, b){
+  return b - a 
+}); 
+
+
+var products = 생략;
+
+$('#price').click(function(){
+
+      products.sort(function(a, b){
+        return a.price - b.price
+      });
+
+      $('.row').html('');
+
+      products.forEach((a, i)=>{
+        var 템플릿 = 
+        `<div class="col-sm-4">
+          <img src="https://via.placeholder.com/600" class="w-100">
+          <h5>${products[i].title}</h5>
+          <p>가격 : ${products[i].price}</p>
+        </div>`;
+        $('.row').append(템플릿)
+      })
+}); 
 
 
 </script>
