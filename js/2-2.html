@@ -16,6 +16,27 @@
   </div>
 
 
+  
+  <div class="black-bg" id="modal-box">
+    <div class="white-bg">
+      <h4>로그인하세요</h4>
+
+      <form action="1-7-1.html" id="form">
+        <div class="my-3">
+          <input type="text" class="form-control" id="email">
+        </div>
+        <div class="my-3">
+          <input type="password" class="form-control" id="password">
+        </div>
+        <button type="submit" class="btn btn-primary" id="send">전송</button>
+        <button type="button" class="btn btn-danger" id="close">닫기</button>
+      </form>
+
+    </div>
+  </div>
+
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
   integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -55,7 +76,48 @@
     }
   },1000);
 
+</script>
 
+<script>
+
+
+  // 'abc'.includes('a');
+  // 왼쪽문자에 a들어있는지 확인가능
+
+  // 정규식(regular expression)
+  // /a/.test('abcde');  >> a를 한글자 찾는거고, 여러개 찾고싶으면 /a+/해야함
+  // a라는 문자가 ''안에 들어있는지 정규식으로 확인 
+  // 정규식 장점 : /[a-zA-z]/.test('abcdefABC') 범위 지정가능 a-z까지 아무글자 하나 들어있는지 등
+  // /[ㄱ-ㅎ가-힣ㅏ-ㅣ]/.test('훈민정음ㅎㅎ')
+  // /\S/.test('zzzz') \S 아무문자(특문까지도 인식)
+  // /^a/.test('ajdfa')  ^a a로 시작하는지,  a$ a로 끝나는지
+
+  // /\S@\S\.\S/.test('a@b.c')  .은 정규식내에서 특수문법이기에 \. 해야함
+  // \S는 한글자를 뜻하기 때문에 \S+ 를 해야 됨
+  // /\S+@\S+\.\S+/.test('aaa@bbb.ccc')
+
+
+
+  $('form').on('submit', function (e) {
+    var 입력한값 = document.getElementById('email').value;
+    var 비번검사 = document.getElementById('password').value;
+      if(입력한값 == ''){
+        e.preventDefault();
+        alert('아이디입력해주세요')
+      }
+      if(document.getElementById('password').value.length < 6){
+        e.preventDefault();
+        alert('비밀번호 6자 이상 입력해주세요')
+      } if(/\S+@\S+\.\S+/.test(입력한값) == false){
+        e.preventDefault();
+        alert('이메일 형식아님')
+      } if(/[A-Z]/.test(비번검사) == false){
+        e.preventDefault();
+        alert('비번에 대문자 하나이상포함')
+      }
+    });
+
+    // 입력한값,비번검사 둘다  == false를 적용해야 제대로 작동
 
 </script>
 </body>

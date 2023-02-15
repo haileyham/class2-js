@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>parctice</title>
+</head>
+<body>
+  <div class="alert" id="alert1">
+    hello 1초뒤ㅣ빠이
+  </div>
+
+  <div class="alert" id="alert5">
+    hello <span id="num">5</span>초 남았다
+  </div>
+
+  <div class="black-bg" id="modal-box">
+    <div class="white-bg">
+      <h4>로그인하세요</h4>
+
+      <form action="1-7-1.html" id="form">
+        <div class="my-3">
+          <input type="text" class="form-control" id="email">
+        </div>
+        <div class="my-3">
+          <input type="password" class="form-control" id="password">
+        </div>
+        <button type="submit" class="btn btn-primary" id="send">전송</button>
+        <button type="button" class="btn btn-danger" id="close">닫기</button>
+      </form>
+
+    </div>
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+  integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+
+    setTimeout(function(){
+      $('#alert1').hide();
+    },1000)
+
+    var count = 5;
+    setInterval(function(){
+      count -= 1;
+      if(count >= 0){
+        document.getElementById('num').innerHTML = count;
+      }else{
+        document.getElementById('alert5').style.display='none';
+        clearTimeout(count);
+      }
+
+    },1000)
+
+  </script>
+
+<script>
+  $('form').on('submit',function(e){
+    var 입력한값 = document.getElementById('email').value;
+    var 비번검사 = document.getElementById('password').value;
+
+    if(입력한값 == ''){
+      e.preventDefault();
+      alert('아이디입력하시오')
+    }if(/[A-Z]/.test(비번검사) == false){
+      alert('비번대문자')
+    }if(/\S+@\S+\.\S+/.test(입력한값) == false){
+      alert('이메일형식유지')
+    }if(비번검사.length <6){
+      alert('비번6자이상')
+    }
+  })
+</script>
+
+
+
+</body>
+</html>
