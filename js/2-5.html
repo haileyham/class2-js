@@ -18,6 +18,19 @@
     </div>
   </div>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
+  </div> 
+
+
   <div style="height:1000px;"></div>
 
 
@@ -34,14 +47,39 @@
     window.screenY
   });
   //scroll 이벤트리스너 , window가 스크롤될때마다 안에꺼 실행
-  // window.scrollY 유저가 얼마나 스크롤바 내렸나 측정
+  // window.scrollY 유저가 얼마나 스크롤바 내렸나 측정 px단위
   // window.scrollTo(x,y) 강제로 스크롤하기
   // window.scrollBy(x,y); 현재위치부터 강제로 스크롤하기
   // $(window).scrollTop() 현재 스크롤바 위치 
   // $(window).scrollTop(100) 스크롤바 이동(scrollY랑 비슷)
 
 
+  //div의 스크롤바 내린양 +눈에보이는 div높이(div에다가 height 100준거)== div 실제높이
+  document.querySelector('.lorem').addEventListener('scroll',function(){
+    var 스크롤양 = document.querySelector('.lorem').scrollTop;
+    var 실제높이 = document.querySelector('.lorem').scrollHeight;
+    var 높이 = document.querySelector('.lorem').clientHeight;
+    console.log(스크롤양,실제높이);
+  })
 
 </script>
+
+<script>
+  // window.addEventListener('scroll',function(){
+  //   if($(window).scrollY = 100){
+  //     $('.navbar-brand').css('font-size','20px');
+  //   }
+  // })
+  // 위에껄로하면 100 지나왔을때부터 계속 작아져있음.
+
+  window.addEventListener('scroll',function(){
+    if(window.scrollY > 100){
+      $('.navbar-brand').css('font-size','20px');
+    }else{
+      $('.navbar-brand').css('font-size','30px');
+    }
+  })
+</script>
+
 </body>
 </html>
