@@ -30,6 +30,18 @@
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
   </div> 
 
+  <br>
+<br>
+<br>
+<br>
+<br>
+
+  <div class="gray-line"></div>
+  <br>
+<br>
+<br>
+<br>
+  <div class="pink-line"></div>
 
   <div style="height:1000px;"></div>
 
@@ -79,7 +91,70 @@
       $('.navbar-brand').css('font-size','30px');
     }
   })
+
+
+
+  document.querySelector('.lorem').addEventListener('scroll',function(){
+    var 스크롤양 = document.querySelector('.lorem').scrollTop;
+    var 실제높이 = document.querySelector('.lorem').scrollHeight;
+    var 높이 = document.querySelector('.lorem').clientHeight;
+    if(스크롤양 + 높이 > 실제높이-10){
+      alert('다읽음')
+    }
+  });
+
+
+  let h = document.querySelector('html').scrollHeight;
+  console.log(h);
+  document.documentElement.scrollHeight;
+  // 현 웹페이지 실제높이
+  // 두개같음
+  //body 끝나기 전에 넣는 것이 좋음 : 페이지 로드 완료시 실행해야 정확함. 제대로 측정가능
+  let hi = document.querySelector('html').clientHeight;
+  console.log(hi);
+  // 페이지 보이는 부분 높이
+  window.scrollY;
+  // 현재 페이지 스크롤 양
 </script>
+
+
+<script>
+  $(window).on('scroll',function(){
+let scrollY = document.documentElement.scrollTop;
+let totalY = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+let percentage = (scrollY / totalY) * 100;//퍼센트 값
+document.querySelector(".gray-line").style.width = percentage + "%";
+console.log(document.documentElement.clientHeight)
+console.log(document.documentElement.scrollHeight)
+})
+  
+
+$(window).on('scroll',function(){
+let scrollY = document.documentElement.scrollY;
+let totalY = document.documentElement.scrollHeight;
+let percentage = (scrollY / totalY) * 100;//퍼센트 값
+document.querySelector(".pink-line").style.width = percentage + "%";
+console.log(document.documentElement.clientHeight)
+console.log(document.documentElement.scrollHeight)
+})
+
+
+$(window).on("scroll", function () {
+        var 페이지스크롤양 = window.scrollY;
+        var 페이지실제높이 = document.querySelector("html").scrollHeight;
+        var 페이지높이 = document.documentElement.clientHeight;
+        var 페이지스크롤퍼센트 =
+          (페이지스크롤양 / (페이지실제높이 - 페이지높이)) * 100;
+        console.log(페이지스크롤퍼센트);
+        var perPage = 페이지스크롤퍼센트 + "%";
+        $(".percentBar").css("width", perPage);
+      });
+
+      // clinetHeight:내가 보고있는페이지의 높이
+      // scrollHeight:전체높이
+      // scrollY:위에서부터 얼마나 내려왔는지 스크롤양
+</script>
+
 
 </body>
 </html>
