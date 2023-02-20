@@ -1,0 +1,38 @@
+.black-bg {
+  width : 100%;
+  height : 100%;
+  position : fixed;
+  background : rgba(0,0,0,0.5);
+  z-index : 5;
+  padding: 30px;
+  /* display: none; */
+  visibility: hidden;
+  /* 애니메이션 줄 때는 display:none/block 말고, visibility 주기 */
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.white-bg {
+  background: white;
+  border-radius: 5px;
+  padding: 30px;
+} 
+
+.show{
+  /* display:block; */
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.modal-btn{
+  background: pink;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding:10px;
+  font-size: 14px;
+}
+
+
+
